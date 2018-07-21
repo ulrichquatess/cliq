@@ -109,7 +109,7 @@ class BlogController extends Controller
     public function edit($id)
     {
         // Assign or find the $id of each field
-        $blog = blog::find($id);
+        $blog = Blog::find($id);
         
         // Return the view page here
         return view('admin.blogs.edit')->with('blog', $blog); 
@@ -149,9 +149,7 @@ class BlogController extends Controller
                #Add new photo
                 $image = $request->file('blog_image');
                 $filename = time() . '.' . $image->getClientOriginalExtension();
-                $fill = time() . '.' . $image->getClientOriginalExtension();
                 $location = public_path('images/blog/' . $filename);
-                $loca = public_path('images/blog-thumnail/' . $fill);
                 Image::make($image)->save($location);
                 
                 $oldFilename = $blog->image;

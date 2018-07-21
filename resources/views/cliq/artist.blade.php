@@ -11,12 +11,14 @@
 	<!--PAGE CONTENT-->
 	<div class="container-fluid" class="pageContent">
 		<div class="row well">
-			<div class="col-md-3">
-				<h1 class="text-yellow fw8">{{ $page19->title }}<BR />{{ $page19->sub_title }}</h1>
+			<div class="col-md-10">
+				<h1 class="text-yellow fw8">{{ $page19->title }}</h1><br>
+				<h2 class="text-yellow fw8">{{ $page19->sub_title }}</h2>
 			</div>
 			@foreach($artists as $artist)			
 			<div class="col-md-3">
 				<img src="{{ asset('images/artist/' .$artist->image)}}" class="responsiveImg" />
+				<a style="text-align: center; margin-bottom: 10px; margin-left: 40px;" href="{{ $artist->name }}" class="btn btn-warning">View More</a>
 			</div>			
 			@endforeach		
 			</div>	

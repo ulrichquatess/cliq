@@ -18,6 +18,22 @@
             <div class="box-body">
                {!! Form::model($artist, ['route' => ['artist.update', $artist->id], 'method' => 'PATCH', 'files' =>true]) !!}
 
+               <div class="form-group">
+                 <label>Personnal Link</label>
+                {{ Form::text('name', null, ["class" => 'form-control']) }}
+                    @if ($errors->has('name'))
+                       <p class="help is-danger">{{$errors->first('name')}} </p>
+                    @endif
+               </div>
+
+               <div class="form-group">
+                 <label>Artist Name</label>
+                {{ Form::text('link', null, ["class" => 'form-control']) }}
+                    @if ($errors->has('link'))
+                       <p class="help is-danger">{{$errors->first('link')}} </p>
+                    @endif
+               </div>
+
                 <div class="form-group">
                   {{ Form::label('artist_image', 'Upload Feautured Image:')}}
                   {{ Form::file('artist_image')}}

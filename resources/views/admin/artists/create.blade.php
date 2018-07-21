@@ -18,6 +18,22 @@
             <div class="box-body">
                {!! Form::open(['route' => 'artist.store', 'data-parsley-validate' => '', 'files' => true]) !!}
 
+               <div class="form-group">
+                 <label>Artist Link</label>
+                 <input type="text" name="name" id="name" class="form-control" placeholder="Enter Link To View Portfolio ...">
+                   @if ($errors->has('name'))
+                       <p class="help is-danger">{{$errors->first('name')}} </p>
+                    @endif
+               </div>
+
+               <div class="form-group">
+                 <label>Artist Name</label>
+                 <input type="text" name="link" id="link" class="form-control" placeholder="Enter Name ...">
+                   @if ($errors->has('link'))
+                       <p class="help is-danger">{{$errors->first('link')}} </p>
+                    @endif
+               </div>
+
                 <div class="form-group">
                   {{ Form::label('artist_image', 'Upload Feautured Image:')}}
                   {{ Form::file('artist_image')}}

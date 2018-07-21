@@ -238,6 +238,32 @@
           </ul>
         </li>
 
+        <li class="treeview">
+          <a>
+            <i class="fa fa-edit"></i> <span>Volunterism Section</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('volunterism.create') }}"><i class="fa fa-circle-o"></i>Create New volunterism</a></li>
+            <li><a href="{{ route('volunterism.index') }}"><i class="fa fa-circle-o"></i>Show All volunterism</a></li>
+          </ul>
+        </li>
+
+        <li class="treeview">
+          <a>
+            <i class="fa fa-edit"></i> <span>Department Section</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('department.create') }}"><i class="fa fa-circle-o"></i>Create New Department</a></li>
+            <li><a href="{{ route('department.index') }}"><i class="fa fa-circle-o"></i>Show All Department</a></li>
+          </ul>
+        </li>
+
           <li class="treeview">
           <a>
             <i class="fa fa-edit"></i> <span>Setting Section</span>

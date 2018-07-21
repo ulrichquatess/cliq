@@ -39,7 +39,7 @@
             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/about">About Us <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="/aboutcliq">About Cliq</a></li>
-                <li><a href="/problem">Problem Statement</a></li>
+                <li><a  href="/problem">Problem Statement</a></li>
                 <li><a href="/mission">Mission & Vision</a></li>
                 <li><a href="/about">About Organizers</a></li>
                 <li><a href="/festival">Cliq Festival 2017</a></li>
@@ -69,7 +69,7 @@
               </ul>
             </li>
 
-            <li><a href="/events">Events</a></li>
+            <li class=" {{ Request::is('/events') ? "active" : ""}}"><a href="/events">Events</a></li>
 
             <li><a href="/ticket">ticket</a></li>
 

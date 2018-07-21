@@ -52,12 +52,17 @@ class ArtistController extends Controller
         //VALIDATE DATA
 
         $this->validate($request, [
+               'link' => 'required',
+               'name' => 'required',
                'artist_image' => 'sometimes|image'
           ]);
 
           // STORE DATA TO THE DATABASE
 
          $artist = new Artist; 
+
+         $artist->name = $request->input('name');
+         $artist->link = $request->input('link');
 
             //HERE WE save the image
             if($request->hasFile('artist_image')) {
@@ -118,6 +123,8 @@ class ArtistController extends Controller
         $artist = Artist::find($id);
         
              $this->validate($request, [
+                'link' => 'required',
+                'name' => 'required',
                'artist_image' => 'image'
           ]); 
     
@@ -125,6 +132,9 @@ class ArtistController extends Controller
        // save the data to the database NOTE :: here it is different from the other once
 
            $artist = Artist::find($id);
+
+           $artist->name = $request->input('name');
+           $artist->link = $request->input('link');
 
 
            //HERE WE are checking if someone added a photo or not

@@ -29,6 +29,25 @@ class HomeController extends Controller
         return view('cliq/cameroon');
     }
 
+    public function kameroon()
+    {
+        Session::flash('success', 'The Form Successfully Submitted');
+        return view('cliq/cameroon');
+    }
+
+// Out Of Cameroon Section
+    public function outcameroon()
+    {
+        return view('cliq/outcameroon');
+    }
+
+    public function outkameroon()
+    {
+        Session::flash('success', 'The Form Successfully Submitted');
+        return view('cliq/outcameroon');
+    }
+// Ends Here    
+
     public function patron()
     {
         return view('cliq/patron');
@@ -140,7 +159,7 @@ class HomeController extends Controller
     
     public function artists()
       {
-        $artists = Artist::paginate(6);
+        $artists = Artist::paginate(8);
         return view('cliq/artist')->with([
             'artists' => $artists
         ]);

@@ -42,7 +42,12 @@ Auth::routes();
     // Menu Routes
     Route::resource('menu', 'MenuController');
     // Volumterism Form Checking
-    Route::resource('volunterism', 'VolunterismForm');
+    Route::post('volunterism/volum', 'VolunterismFormController@volum')->name('volunterism.volum');
+    Route::resource('volunterism', 'VolunterismFormController');
+
+    // Department Here
+    Route::resource('department', 'DepartmentController');
+
 /** It Ends Here **/
 
 //Pages Section Together
@@ -55,8 +60,13 @@ Route::get('/consumer', 'HomeController@consumer')->name('consumer');
 // Sponsorship Section
 Route::get('/sponsorship', 'HomeController@sponsorship')->name('sponsorship');
 
-// Sponsorship Section
+// Volunteer Section In Cameroon
 Route::get('/cameroon', 'HomeController@cameroon')->name('cameroon');
+Route::get('/kameroon', 'HomeController@kameroon')->name('kameroon');
+
+// Out Of Cameroon
+Route::get('/outcameroon', 'HomeController@outcameroon')->name('outcameroon');
+Route::get('/outkameroon', 'HomeController@outkameroon')->name('outkameroon');
 
 // About Section
 Route::get('/about', 'HomeController@about')->name('about');

@@ -25,7 +25,8 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th></th>
+                  <th>Artist Link</th>
+                  <th>Artist Name</th>
                   <th>Action</th>
                 </tr>
                 </thead>
@@ -33,7 +34,8 @@
                 <tbody>
                   @foreach($artists as $artist ) 
                   <tr>
-                  <td></td>
+                  <td>{{ substr(strip_tags($artist->name), 0, 30) }} {{ strlen(strip_tags($artist->name)) > 30 ? "...." : "" }}</td>
+                  <td>{{ substr(strip_tags($artist->link), 0, 30) }} {{ strlen(strip_tags($artist->link)) > 30 ? "...." : "" }}</td>
                   <td><a class="btn btn-info btn-xs" href="{{ route('artist.show', $artist->id)}}">Show</a>
                     <a class="btn btn-primary btn-xs" href="{{ route('artist.edit', $artist->id) }}">Edit English</a>
                     {!! Form::open(['method' => 'DELETE','route' => ['artist.destroy', $artist->id],'style'=>'display:inline']) !!}
@@ -44,8 +46,8 @@
                 </tbody>
     
                 <tfoot>
+                <th>Artist Link</th>
                 <th>Artist Name</th>
-                <th>Artist Image</th>
                 <th>Action</th>
                 </tfoot>
               </table>
